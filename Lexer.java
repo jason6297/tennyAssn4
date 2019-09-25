@@ -23,6 +23,9 @@ public class Lexer
 			return lexeme;
 		}
 	}
+	
+	//error type lexemes go inside token class ^
+	/*
 	private class TokenError extends Token
 	{
 
@@ -39,12 +42,23 @@ public class Lexer
 		//an ampersand, then the erroneous lexeme "&" 
 		//would be returned with the token descriptor "error".
 	}
+	*/
 //	public Lexer() 
 //	{
 //		
 //	}
 	public Token lex() 
 	{
+		//test input
+		/*
+		num x
+		x = 5
+
+		repeat x
+		(
+		    show('Hello!')
+		)
+		*/
 		Scanner scan = new Scanner(System.in);
 		String token= ""; 
 		token = scan.next();
@@ -57,9 +71,9 @@ public class Lexer
 	}
 	public static void main(String[] args)
 	{
-//        Lexer lex = new Lexer(args[0]);
-//        Token current = lex.lex();
-//        while(current!=null)
+//        Lexer lexer = new Lexer(args[0]);
+//        Token current = lexer.lex();
+//        while(current!=null)// || current.getToken() != error)
 //        {
 //            System.out.println(current);
 //            current = lex.lex();
