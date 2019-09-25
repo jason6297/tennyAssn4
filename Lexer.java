@@ -47,22 +47,30 @@ public class Lexer
 //	{
 //		
 //	}
-	public Token lex() 
+	public Token lex()
 	{
-		//test input
-		/*
-		num x
-		x = 5
+		if(args.length>0)
+		{
+			try
+			{
+				Scanner scan = new Scanner(new File(args[0]));
+				String token= ""; 
+				while(scan.hasNext())
+				{
 
-		repeat x
-		(
-		    show('Hello!')
-		)
-		*/
-		Scanner scan = new Scanner(System.in);
-		String token= ""; 
-		token = scan.next();
-		//Token = new Token(token, whatitdo(token));
+				}
+				token = scan.next();
+				//Token = new Token(token, whatitdo(token));
+				return null;
+			}
+		catch (Exception e)
+			System.out.println("file not found.")
+		}
+		else 
+			System.out.println("no file present");
+	}
+	private String Whatitdo(String lex) 
+	{
 		return null;
 	}
 	private String Whatitdo(String lex) 
